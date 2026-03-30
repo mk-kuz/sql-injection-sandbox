@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<style>
+    body {
+        background-color: #4a4848; /* This is a standard light grey */
+    }
+</style>
+<body>
+<h2>Product Search</h2>
+<form action="/" method="get">
+    <input type="text" name="name" placeholder="Search product...">
+    <button type="submit">Search</button>
+</form>
+<h3 th:if="${session.loggedInUser}">
+    Welcome, <span th:text="${session.loggedInUser}"></span>!
+</h3>
+
+<table border="1" th:if="${products}">
+    <tr><th>Name</th><th>Price</th></tr>
+    <tr th:each="p : ${products}">
+        <td th:text="${p.NAME}"></td>
+        <td th:text="${p.PRICE}"></td>
+    </tr>
+
+</table>
+<a href="/logout">Logout</a>
+</body>
+</html>

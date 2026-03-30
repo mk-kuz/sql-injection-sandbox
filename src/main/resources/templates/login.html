@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<style>
+    body {
+        background-color: #4a4848; /* This is a standard light grey */
+    }
+</style>
+<body>
+<h2>Secure(?) Login</h2>
+<form action="/login" method="post">
+    <input type="text" name="user" placeholder="Username"><br>
+    <input type="password" name="pass" placeholder="Password"><br>
+    <button type="submit">Login</button>
+</form>
+
+<h3 style="color: darkgreen;" th:text="${message}"></h3>
+<p th:text="${role}"></p>
+<h3 style="color: black;" th:text="${error}"></h3>
+</body>
+</html>
